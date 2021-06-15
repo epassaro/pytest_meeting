@@ -27,7 +27,7 @@ jobs:
         run: pip install pytest
 
       - name: Run pytest
-        run: pytest
+        run: pytest --cov
 
   foo:  # This job is called `foo` and does nothing
     runs-on: ubuntu-latest
