@@ -24,7 +24,7 @@ jobs:
           python-version: 3.x
 
       - name: Install pytest
-        run: pip install pytest
+        run: pip install pytest pytest-cov
 
       - name: Run pytest
         run: pytest --cov
