@@ -13,7 +13,7 @@ w = Complex(1, 2)
 
 @pytest.fixture
 def z():
-    return Complex(2,2)
+    return Complex(4,3)
 
 @pytest.fixture
 def w():
@@ -25,12 +25,12 @@ of functions and assertions.
 """
 
 def test_repr(z, w):
-    assert z.__repr__() == "2 + 2i"
+    assert z.__repr__() == "4 + 3i"
 
 def test_add(z, w):
     v = z + w
-    assert str(v) == "3 + 4i"
+    assert str(v) == "5 + 5i"
 
 @pytest.mark.skip  # Mark the test to be skipped by `pytest`
 def test_mod(z):
-    pass
+    z.mod() == 5
