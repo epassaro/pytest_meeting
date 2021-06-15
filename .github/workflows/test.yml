@@ -1,0 +1,36 @@
+name: test
+
+on:             # This is the trigger section
+  push:
+    branches:
+      - master  # This pipeline will run every time a commit is pushed to the `master` branch 
+                # of this repo
+  pull_request:
+    branches:
+      - master  # Also, this pipeline will run every time a commit is pushed to a pull request
+                # pointing to the `master` branch of this repo
+
+jobs:
+  pytest:  # This job is called `pytest`
+
+    runs-on: ubuntu-latest  # Runs on latest Ubuntu
+    steps:
+      - uses: actions/checkout@v2  # Fetch the repository and checkout to the HEAD of `master`  
+                                   # or pull request, depending on the trigger
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run pytest
+        run: pytest
+
+  foo:  # This job is called `foo` and does nothing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run: echo "Hello World"
