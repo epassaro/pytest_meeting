@@ -2,10 +2,7 @@
 import pytest
 from example import Complex
 
-"""
-Then write your tests. They're just a bunch
-of functions and assertions.
-"""
+# Tests are just a bunch of functions and assertions.
 
 def test_repr():
     z = Complex(4, 3)
@@ -17,7 +14,9 @@ def test_add():
     v = z + w
     assert str(v) == "5 + 5i"
 
-@pytest.mark.skip  # Mark the test to be skipped by `pytest`
+# Mark the test to be skipped by `pytest`
+
+@pytest.mark.skip 
 def test_mod():
     z = Complex(4, 3)
     z.mod() == 5
