@@ -1,3 +1,5 @@
+from math import sqrt
+
 class Complex:
     """ 
     Example class to play around with complex numbers and tests. 
@@ -24,5 +26,6 @@ class Complex:
 
     def mod(self):
         """
+        This method returns the modulus of the complex number.
         """
-        raise NotImplementedError("This method should return the modulus of the complex number.")
+        raise sqrt(self.a**2 + self.b**2)
